@@ -66,7 +66,8 @@ public class CompressString
    * Time complexity O(n) Space complexity O(n)
    * First while loop for finding repeat groups, and inner while loop is for finding same characters
    */
-  public String compressAlternativeApproach(String src) {
+  public String compressAlternativeApproach(String src) 
+  {
     if (src.size() == 0 || src.length() == 1) return src;
     
     int index = 0;
@@ -112,7 +113,7 @@ public class CompressString
 
   private boolean isCharRepeated(char previousChar, char currentChar)
   {
-    return currentChar == previousChar;
+    return (currentChar == previousChar);
   }
 
   private void appendLastCharIfNeeded(StringBuilder stringBuilder, int repeatedCharCounter,char previousChar)
@@ -130,7 +131,7 @@ public class CompressString
    */
   public String compressRecursive(String src) 
   {
-    boolean thereIsNoMoreWordToCompress = false;
+    //boolean thereIsNoMoreWordToCompress = false;
 
     if (src.length() <= 1) return src;
 
@@ -141,7 +142,7 @@ public class CompressString
 
   private String compressRecursiveInner(String src, StringBuilder sb, int i, char previousChar, int charCounter)
   {
-    boolean thereIsNoMoreWordToCompress = i == src.length();
+    boolean thereIsNoMoreWordToCompress = (i == src.length());
   
     if (thereIsNoMoreWordToCompress == true){
       addChar(sb, previousChar);
